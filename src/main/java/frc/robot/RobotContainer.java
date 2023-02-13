@@ -8,9 +8,12 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.DropArm;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.ExtendArm;
 import frc.robot.commands.RaiseArm;
+import frc.robot.commands.RetractArm;
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.Extender;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -25,6 +28,7 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Arm arm = new Arm();
+  private final Extender extender = new Extender();
   
 
   // Replace with CommandPS4Controller or CommandJoystick if needed
@@ -55,6 +59,8 @@ public class RobotContainer {
     // cancelling on release.
     m_driverController.b().whileTrue(new RaiseArm(arm));
     m_driverController.a().whileTrue(new DropArm(arm));
+    m_driverController.x().whileTrue(new RetractArm(extender));
+    m_driverController.y().whileTrue(new ExtendArm(extender));
 
   }
 

@@ -21,10 +21,13 @@ public final class Constants {  //constants used throughout entire program
     public static final int driveLeftRear = 1; 
     public static final int driveRightFront = 2;
     public static final int driveRightRear = 3;
-          //Shooter
+          //Lifter
     public static final int liftMotorRight = 4;
     public static final int liftMotorLeft = 5;
-    public static final double liftSpeed = .5;
+    public static final double liftSpeed = 1;
+            //arm
+      public static final int arm_motor = 6;
+      public static final double arm_speed = .7;
           //Pneumatics
 
 
